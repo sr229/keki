@@ -1,0 +1,26 @@
+{
+  "name": "keki",
+  "version": "1.0.0",
+  "description": "A Node.js Wrapper for CakeChat",
+  "main": "index.js",
+  "scripts": {
+    "test": "node tests/test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ClarityMoe/keki.git"
+  },
+  "keywords": [
+    "cakechat",
+    "lightweight"
+  ],
+  "author": "sr229",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ClarityMoe/keki/issues"
+  },
+  "homepage": "https://github.com/ClarityMoe/keki#readme",
+  "devDependencies": {
+    "eslint": "^4.19.1"
+  }
+}
