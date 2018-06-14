@@ -5,22 +5,18 @@
  * @license MIT  
  */
 
-const Keki = require('../');
 const config = require('./config.json');
-const handler = new Keki(config.kekiURL || process.env.KEKI_URL, config.kekiUserAgent || 'Keki/1.0');
+const Keki = require('../');
+const handler = new Keki(config.kekiURL || process.env.KEKI_CAKECHAT_URL, config.userAgent || 'Keki/1.0');
 const assert = require('assert');
 
-(async () => {
-    console.log('Testing `Keki#getResponse`');
-    let res = await handler.getResponse(["What's up?"]);
-    assert(typeof res === 'object');
-    console.log(res);
-    console.log('\n\n');
+console.log('Starting Keki#getResponse....');
 
-})().then(() => {
-    console.log('All tests completed.');
-    process.exit(0);
+handler.getResponse(['uwu']).then(r => {
+    assert(typeof r === 'object');
+    console.log(r);
 }).catch(err => {
+    console.error('Test failed! Stack trace provided below.\n');
     console.error(err);
     process.exit(1);
 });

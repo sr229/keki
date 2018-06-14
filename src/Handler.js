@@ -13,7 +13,7 @@ const URL_REGEX = /^(https?:\/\/)?(((www\.)?[a-zA-Z0-9\.\-\_]+(\.[a-zA-Z]{2,3})+
   * Class that exposes all the methods to query to a cakechat instance
   * @class
 */
-class CakeChatHandler {
+class Keki {
     /**
      * 
      * @param {String} url the URL for your instance. Must be a valid IP or hostname. 
@@ -34,7 +34,7 @@ class CakeChatHandler {
      */
     getResponse(context) {
         return new Promise((resolve, reject) => {
-            if (!Array.isArray(context)) return reject('context is not an array.');
+            if (!Array.isArray(context)) reject('context is not an array.');
             else resolve(request('POST', `${this.url}/cakechat_api/v1/actions/get_response`, {
                 headers: {
                     'Content-Type': 'application/json',
@@ -80,4 +80,4 @@ function request(method, url, options={}, payload) {
     });
 }
 
-module.exports = CakeChatHandler;
+module.exports = Keki;
